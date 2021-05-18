@@ -23,7 +23,6 @@ from apps.endpoints.views import EndpointViewSet
 from apps.endpoints.views import MLAlgorithmViewSet
 from apps.endpoints.views import MLAlgorithmStatusViewSet
 from apps.endpoints.views import MLRequestViewSet
-from apps.endpoints.urls import urlpatterns as endpoints_urlpatterns
 
 router = DefaultRouter(trailing_slash=False)
 router.register(r"endpoints", EndpointViewSet, basename="endpoints")
@@ -35,4 +34,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r"^api/v1/", include(router.urls)),
 ]
-urlpatterns += endpoints_urlpatterns
